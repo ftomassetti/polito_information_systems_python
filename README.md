@@ -1,4 +1,6 @@
-polito_information_systems_python
-=================================
+Python snippets for the courses of Information Systems (Prof. Demartini)
+========================================================================
 
-Examples and guide showed in the lab sessions
+Here you will find the examples shown during the lab lessons and some minimal documentation about Python & Flask.
+
+Enjoy!
