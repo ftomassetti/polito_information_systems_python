@@ -15,7 +15,8 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Information Systems - Python and Flask lab</a>
+	      <!-- url_for use the name of the python method! Not the URL! -->
+	      <a class="navbar-brand" href="{{ url_for('show_about') }}">Information Systems - Python and Flask lab</a>
 	    </div>
 	    <div class="navbar-collapse collapse">
 	      <form class="navbar-form navbar-right">

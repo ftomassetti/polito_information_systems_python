@@ -1,7 +1,4 @@
-from flask import Flask,request,get_flashed_messages,redirect
-from flask.ext.wtf import Form
-from wtforms import TextField, PasswordField
-from wtforms.validators import Required, EqualTo
+from flask import Flask,request
 from flask import render_template
 
 app = Flask("MyApp")
@@ -26,5 +23,6 @@ def show_posts_dynamic():
 
 @app.route('/about')
 def show_about():
-	return render_template('about.html')	
+	return render_template('about.html')
+		
 app.run()

@@ -1,7 +1,4 @@
-from flask import Flask,request,get_flashed_messages,redirect
-from flask.ext.wtf import Form
-from wtforms import TextField, PasswordField
-from wtforms.validators import Required, EqualTo
+from flask import Flask
 from flask import render_template
 
 app = Flask("MyApp")
@@ -27,6 +24,5 @@ def show_posts():
 @app.route('/postsdyn')
 def show_posts_dynamic():
 	return render_template('posts_dynamic.html',posts=get_posts())	
-
 
 app.run()
