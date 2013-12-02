@@ -5,7 +5,7 @@ from flask.ext.login import LoginManager, UserMixin
 from flask.ext.login import current_user, login_required, login_user, logout_user
 from flask.ext.wtf import Form
 from wtforms import TextField, PasswordField
-from wtforms.validators import Required
+from wtforms.validators import Required, ValidationError
 
 app = Flask("MyApp")
 app.secret_key = 'MySecretKey'
@@ -33,6 +33,15 @@ class User(UserMixin):
 class LoginForm(Form):
 	username = TextField(    'username', validators = [Required()])
 	password = PasswordField('password', validators = [Required()])
+
+	def validate_username(self, field):
+	    user = load_user(self.username.data)
+
+	    if user is None:
+	        raise ValidationError('Invalid user')
+
+	    if user.password != self.password.data:
+	        raise ValidationError('Invalid password')
 
 @login_manager.user_loader
 def load_user(username):
