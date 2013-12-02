@@ -1,0 +1,12 @@
+{% from "form.html" import form_field %}
+{% extends "base.html" %}
+{% block content %}
+<div class="navbar-collapse collapse">
+  <form class="navbar-form navbar-right" action="" method="POST">
+    {{ form.csrf_token }}
+    {{ form_field(form.username)   }}
+    {{ form_field(form.password)   }}
+    <button type="submit" class="btn btn-success">Sign in</button>
+  </form>
+</div><!--/.navbar-collapse -->
+{% endblock %}
