@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+{% block content%}
+  	<table border="1">
+  		<tr>
+  			<td>NAME</td>
+    		<td>SURNAME</td>
+    		<td>USERNAME</td>
+    		<td>GENDER</td>
+    		<td>ADDRESS</td>
+    		<td>CITY</td>
+    		<td>COUNTRY</td>
+    	</tr>
+	{% for dbrow in dbrows %}
+ 		<tr>
+    		<td>{{dbrow.name}}</td>
+    		<td>{{dbrow.surname}}</td>
+    		<td>{{dbrow.username}}</td>
+    		<td>{{dbrow.gender}}</td>
+    		<td>{{dbrow.address}}</td>
+    		<td>{{dbrow.city}}</td>
+    		<td>{{dbrow.country}}</td>
+    	</tr>
+    {% endfor %}
+    </table>
+	<br/><br/>
+	<p><a href="index.html">BACK</a></p><br/>
+{% endblock%}

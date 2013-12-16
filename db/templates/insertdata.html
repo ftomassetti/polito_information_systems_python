@@ -1,0 +1,14 @@
+{%from "form.html" import form_field %}
+{% extends "base.html"%}
+{% block content%}
+		<form class="navbar-form navbar-left" action="" method="post">
+  			{{form.csrf_token}}
+  			{{ form_field(form.name)}}
+  			{{ form_field(form.surname)}}
+  			{{ form_field(form.username)}}
+  			{{ form_field(form.gender)}}
+  			{{ form_field(form.address)}}
+  			{{ form_field(form.city)}}
+  			{{ form_field(form.country)}}
+  			<button type="submit" class="btn btn-success">Submit data</button>
+{% endblock%}
